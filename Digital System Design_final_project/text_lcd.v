@@ -15,7 +15,7 @@ module text_lcd(
                   Sline = 3'b101;
   assign lcd_en = clk;
 
-  always@(posedge clk or negedge reset) begin
+  always @(posedge clk or negedge reset) begin
         if(reset == 1'b0) begin
            state <= delay;
            count <= 0;

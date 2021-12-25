@@ -1,6 +1,4 @@
-
 // DOT_MATRIX good
-
 
 module dot_matrix(
 	input clk, reset,
@@ -16,12 +14,13 @@ module dot_matrix(
 	reg [13:0] dot_data_0, dot_data_1, dot_data_2, dot_data_3,dot_data_4,dot_data_5,
 			dot_data_6, dot_data_7, dot_data_8, dot_data_9;
 
-always @(posedge clk or negedge reset) begin // clk = 25MHz 
-	if(reset == 1'b0) begin // negedge reset // reset == 0
+always @(posedge clk or negedge reset) begin 		// clk_1kHz is declared in top_test module
+	if(reset == 1'b0) begin			// negedge reset
 		dot_col <= 0;
 		sel_count <= 0;
 	end
-	else begin // posedge clk 
+
+	else begin 				// posedge clk 
 		if( sel_count >= 9)
 			sel_count <= 0;
 		else 
@@ -40,13 +39,14 @@ always @(posedge clk or negedge reset) begin // clk = 25MHz
 			4'd9 : dot_col <= 10'b00_0000_0001;
 			default : dot_col <= 0;
 		endcase 
-	end // else begin 
-end // always begin 
+	end
+end
 
-always@(posedge correct or negedge reset) begin
+always @(posedge correct or negedge reset) begin
 		if(~reset) begin
 			c_crt <= 0; 
 		end
+
 		else if(correct >= 1) begin
 			c_crt <= 4'd1;
 			
@@ -57,6 +57,7 @@ always@(posedge wrong or negedge reset) begin
 		if(~reset) begin
 			c_wrg <= 0; 
 		end
+
 		else begin
 			c_wrg <= c_wrg + 4'd1;
 		end
@@ -76,6 +77,7 @@ always@(posedge clk) begin
 				dot_data_1 <= 14'b11_1111_0011_1100;
 				dot_data_0 <= 14'b00_0000_0000_0000;
 	end
+
 	else if(c_wrg == 4'd1 ) begin 
 				dot_data_9 <= 14'b11_1111_1111_0000;
 				dot_data_8 <= 14'b01_0000_0000_1100;
@@ -89,6 +91,7 @@ always@(posedge clk) begin
 				dot_data_1 <= 14'b10_0000_0000_1100;
 				dot_data_0 <= 14'b11_1111_1111_0000;
 	end
+
 	else if(c_wrg == 4'd2) begin 	
 				dot_data_9 <= 14'b11_1111_1111_0000;
 				dot_data_8 <= 14'b01_0000_0000_1100;
@@ -102,6 +105,7 @@ always@(posedge clk) begin
 				dot_data_1 <= 14'b10_0000_0000_1100;
 				dot_data_0 <= 14'b11_1111_1111_0000;
 	end
+
 	else if(c_wrg == 4'd3) begin 
 				dot_data_9 <= 14'b00_0000_0111_1111;
 				dot_data_8 <= 14'b10_0001_0000_1001;
@@ -115,6 +119,7 @@ always@(posedge clk) begin
 				dot_data_1 <= 14'b10_0000_0000_1001;
 				dot_data_0 <= 14'b10_0000_0111_1110;	
 	end
+
  	else begin 
 				dot_data_9 <= 14'b00_0000_0001_1000;
 				dot_data_8 <= 14'b00_0000_0000_1100;
@@ -130,7 +135,7 @@ always@(posedge clk) begin
 	end
 end
 
-always @ (posedge clk or negedge reset) begin  // clk = 25MHz
+always @ (posedge clk or negedge reset) begin  // clk = 1kHz
 	if(reset == 1'b0) begin 
 			dot_row<=0;
 	end
@@ -148,8 +153,8 @@ always @ (posedge clk or negedge reset) begin  // clk = 25MHz
 			4'd9 : dot_row <= dot_data_9;
 			default : dot_row <= 0;
 		endcase 
-	end // else begin 
-end // always 
+	end
+end
 
 endmodule
 

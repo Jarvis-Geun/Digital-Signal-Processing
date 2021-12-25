@@ -4,7 +4,7 @@ module seg_decode(
 	output reg [7:0] seg_data
 );
 
-always@(posedge clk or negedge reset) begin
+always @(posedge clk or negedge reset) begin
 	if(~reset) begin
 		seg_data <= 0;
 	end
@@ -24,6 +24,5 @@ always@(posedge clk or negedge reset) begin
 		endcase
 	end
 end
-
 endmodule
 

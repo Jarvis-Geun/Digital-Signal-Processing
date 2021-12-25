@@ -1,3 +1,4 @@
+// the module which represents clock division - 12.5MHz, 100kHz, 10kHz, 1kHz, ...
 module clk_div(
     input clk_25M, reset,
     output reg clk_12_5M, clk_100k, clk_10k, clk_1k, clk_1s, clk_h, clk_step, clk_led, clk_500
@@ -24,10 +25,13 @@ always @(posedge clk_25M or negedge reset) begin
 			   c8 <= 0;
           end
         else begin
-             //12.5MHz
+
+
+             // 12.5MHz
                    clk_12_5M <= ~clk_12_5M;
 
-             //100KHz
+
+             // 100KHz
              if(c1 >= 8'd124)
                 begin
                     clk_100k <= ~clk_100k;
@@ -35,7 +39,8 @@ always @(posedge clk_25M or negedge reset) begin
              end
              else c1 <= c1 + 1'b1;
 
-             //10KHz
+
+             // 10KHz
              if(c2 >= 12'd1249)
                 begin
                     clk_10k <= ~clk_10k;
@@ -43,7 +48,8 @@ always @(posedge clk_25M or negedge reset) begin
              end
              else c2 <= c2 + 1'b1;
 
-             //1KHz 12500
+
+             // 1KHz 12500
              if(c3 >= 15'd12499)
                 begin
                     clk_1k <= ~clk_1k;
@@ -51,7 +57,8 @@ always @(posedge clk_25M or negedge reset) begin
              end
              else c3 <= c3 + 1'b1;
 
-			 //500Hz
+
+             // 500Hz
              if(c8 >= 15'd24999)
                 begin
                     clk_500 <= ~clk_500;
@@ -59,7 +66,8 @@ always @(posedge clk_25M or negedge reset) begin
              end
              else c8 <= c8 + 1'b1;
 
-             //1sec
+
+             // 1sec
              if(c4 >= 25'd12499999)
                 begin
                     clk_1s <= ~clk_1s;
@@ -67,6 +75,8 @@ always @(posedge clk_25M or negedge reset) begin
              end
              else c4 <= c4 + 1'b1;
 
+
+             // clk_h
              if(c5 >= 18'd124999)
                 begin
                     clk_h <= ~clk_h;
@@ -74,6 +84,8 @@ always @(posedge clk_25M or negedge reset) begin
              end
              else c5 <= c5 + 1'b1;
 
+
+             // clk_step
              if(c6 >= 17'd62499)
                 begin
                     clk_step <= ~clk_step;
@@ -81,6 +93,8 @@ always @(posedge clk_25M or negedge reset) begin
              end
              else c6 <= c6 + 1'b1;
 
+
+             // clk_led
              if(c7 >= 24'd6249999)
                 begin
                     clk_led <= ~clk_led;
