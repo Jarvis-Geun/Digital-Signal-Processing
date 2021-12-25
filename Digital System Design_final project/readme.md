@@ -38,7 +38,9 @@
 
 ### We set the elements(7-segment, led, ...) for appropriate reactions about user's actions. For example, user choose lower number than the designated number. Look at the below images.
 
+<p align="center">
 <img src="img/up_2.jpg" width="30%" height="30%">
+</p>
 
 - 7-segment is changed to wrong status (sad ghost imoticon)
 - LED is increased according to wrong counts
@@ -48,7 +50,9 @@
 
 Down and Equal status are operated in the same way. I don't explain about these status but leave images below instead.
 
+<p align="center">
 <img src="img/success.jpg" width="30%" height="30%">
+</p>
 
 - **Correct status** is equal to **Success status**
 - We make both correct and success variables to read and understand easily. It's not necessary to use both variables.
