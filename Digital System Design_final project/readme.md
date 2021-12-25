@@ -38,7 +38,8 @@
 
 ### We set the elements(7-segment, led, ...) for appropriate reactions about user's actions. For example, user choose lower number than the designated number. Look at the below images.
 
-![up_2](img/up_2.jpg)
+<img src="img/up_2.jpg" width="50%" height="50%">
+
 - 7-segment is changed to wrong status (sad ghost imoticon)
 - LED is increased according to wrong counts
 - Text LCD is changed to wrong status (print "UP")
