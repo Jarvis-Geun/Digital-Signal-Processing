@@ -23,7 +23,7 @@
 
 - Modules  
   - clk_div : Clock division
-  - CorrectOrNot : Decide the designated number is **Correct or Not** and register the results in variances - correct, wrong, fail, success, ...
+  - CorrectOrNot : Decide the designated number is **Correct or Not** and register the results in variables - correct, wrong, fail, success, ...
   - DOT_MATRIX : Dot matrix
   - key_pad : Key pad
   - led_dir : LED
@@ -33,3 +33,29 @@
   - step_motor : Step motor
   - text_lcd : Text LCD
   - top_test : top module (main module)
+
+## Results
+
+### We set the elements(7-segment, led, ...) for appropriate reactions about user's actions. For example, user choose lower number than the designated number. Look at the below images.
+
+![up_2](img/up_2.jpg)
+- 7-segment is changed to wrong status (sad ghost imoticon)
+- LED is increased according to wrong counts
+- Text LCD is changed to wrong status (print "UP")
+
+### UP status : User predict the lower number than the designated number
+
+Down and Equal status are operated in the same way. I don't explain about these status but leave images below instead.
+
+![success](img/success.jpg)
+- **Correct status** is equal to **Success status**
+- We make both correct and success variables to read and understand easily. It's not necessary to use both variables.
+
+![fail](img/fail.jpg)
+- Wrong status is changed to **Fail status** if wrong count is greater than 3.
+
+
+## Results with video
+- We took a video for remembering the results. I leave a video with youtube link.
+
+- [Youtube link](https://www.youtube.com/watch?v=g2lAHPd787Y)
