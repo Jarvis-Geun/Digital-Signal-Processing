@@ -53,7 +53,7 @@ Down and Equal status are operated in the same way. I don't explain about these 
 - **Correct status** is equal to **Success status**
 - We make both correct and success variables to read and understand easily. It's not necessary to use both variables.
 
-<img src="img/fail.jpg" width="30%" height="30%">
+<img src="img/fail.jpg" width="30%" height="30%" align="center">
 
 - Wrong status is changed to **Fail status** if wrong count is greater than 3.
 
