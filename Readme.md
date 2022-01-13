@@ -1,4 +1,4 @@
-### These are the codes of my reports from Univ
+### These are the codes of my reports from Univ.
 
 # Overview
 - Digital System Design  
