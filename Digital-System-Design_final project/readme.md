@@ -66,5 +66,4 @@ Down and Equal status are operated in the same way. I don't explain about these 
 
 ## Results with video
 - We took a video for remembering the results. I leave a video with youtube link.
-
-- [Youtube link](https://youtu.be/C1F9g63RWMA)
+- [Youtube link](https://www.youtube.com/watch?v=oDSu2VFeCfU&ab_channel=Jarvis-Geun)
